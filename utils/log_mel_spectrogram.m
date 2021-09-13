@@ -68,7 +68,6 @@ end
 % Convert lengths and shifts to samples
 M = round(win_shift./1000.*fs);
 N = round(win_length./1000.*fs);
-% num_coeff = 2.^ceil(log2(N));
 num_coeff = 1024;
 % Signal framing
 num_frames = 1 + floor ((length(signal) - N) ./ M);
@@ -99,18 +98,8 @@ freq_centers = freq_centers(1+band_factor:end-band_factor);
 
 %% Logarithmic compression
 % Relative to 0 dB SPL with lower limit at -20 dB SPL and upper limit at 130 dB SPL
-% log_mel_spec = max(-20,min(0,20.*log10(mel_spec)) + 130);
 log_mel_spec = max(-20, min(0,20.*log10(max(mel_spec, 0))) + 130);
 
-% log_mel_spec = max(-20, min(0,20.*log(max(mel_spec, 0))) + 130);
-% log_mel_spec = max(-20, 20*log10(1 + max(mel_spec, 0)));
-% mel_spec = 0.005 * mel_spec ./ sum(mel_spec(:));
-% log_mel_spec = max(-20, 20.*log10(max(mel_spec, 0)) + 130);
-% log_mel_spec = 20.*log10(1 + max(mel_spec, 0));
-% log_mel_spec = 20.*log10(max(mel_spec, 0));
-% log_mel_spec = max(-20, 20.*log10(mel_spec) + 130);
-% mel_spec = mel_spec + 4*eps*randn(size(mel_spec));
-% log_mel_spec = mel_spec;
 end
 
 
