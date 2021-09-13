@@ -42,14 +42,14 @@ function STM_dec = sgbfb(log_mel_spec, STM_channels)
 %     Copyright 2021, Amin Edraki, a.edraki@queensu.ca, Queen's University
 %     at Kingston, Multimedia Coding and Communications Laboratory.
 
-%     This file is part of wstmi.
+%     This file is part of stgi.
 % 
-%     wstmi is free software: you can redistribute it and/or modify
+%     stgi is free software: you can redistribute it and/or modify
 %     it under the terms of the GNU General Public License as published by
 %     the Free Software Foundation, either version 3 of the License, or
 %     (at your option) any later version.
 % 
-%     wstmi is distributed in the hope that it will be useful,
+%     stgi is distributed in the hope that it will be useful,
 %     but WITHOUT ANY WARRANTY; without even the implied warranty of
 %     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 %     GNU General Public License for more details.
